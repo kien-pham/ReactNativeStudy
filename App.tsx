@@ -1,6 +1,21 @@
 import React from "react";
-import LoginForm from "./pages/login/login-form";
+import { Text, View, StyleSheet } from "react-native";
 
 export default function App() {
-  return <LoginForm />;
+  return (
+    <View style={styles.wrapper}>
+      <Text>Hello World!</Text>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: "#efefef",
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
