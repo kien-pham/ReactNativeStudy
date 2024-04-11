@@ -1,21 +1,11 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
+import JobSearch from "./pages/job-search/job-search";
 
 export default function App() {
   return (
-    <View style={styles.wrapper}>
-      <Text>Hello World!</Text>
-    </View>
+    <SafeAreaView>
+      <JobSearch />
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  wrapper: {
-    backgroundColor: "#efefef",
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
