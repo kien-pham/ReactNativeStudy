@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, ImageSourcePropType, StyleSheet, View } from "react-native";
 
-const menuIcon = require("./../../../assets/menu-50.png");
+const menuIcon = require("./../../../assets/menuIcon.png");
 const avatarImg = require("./../../../assets/appAvatar.jpeg");
 
 function UserAvatar({ avatar }: { avatar: ImageSourcePropType }) {

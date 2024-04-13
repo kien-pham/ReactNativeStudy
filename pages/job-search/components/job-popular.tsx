@@ -1,6 +1,10 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 export default function JobPopular() {
-  return <View>JobPopular</View>;
+  return (
+    <View>
+      <Text>JobPopular</Text>
+    </View>
+  );
 }
