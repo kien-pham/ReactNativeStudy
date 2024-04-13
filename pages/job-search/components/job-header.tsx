@@ -5,17 +5,13 @@ const menuIcon = require("./../../../assets/menu-50.png");
 const avatarImg = require("./../../../assets/appAvatar.jpeg");
 
 function UserAvatar({ avatar }: { avatar: ImageSourcePropType }) {
-  return (
-    <View style={styles.headerAvatar}>
-      <Image source={avatar} />
-    </View>
-  );
+  return <Image source={avatar} style={styles.headerAvatar} />;
 }
 
 function MenuIcon() {
   return (
-    <View style={styles.headerMenuIcon}>
-      <Image source={menuIcon} />
+    <View style={styles.headerMenuIconWrapper}>
+      <Image source={menuIcon} style={styles.headerMenuIcon} />
     </View>
   );
 }
@@ -30,11 +26,24 @@ export default function JobHeader() {
 }
 
 const styles = StyleSheet.create({
-  headerWrapper: {},
-  headerAvatar: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+  headerWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
-  headerMenuIcon: {},
+  headerAvatar: {
+    width: 32,
+    height: 32,
+    borderRadius: 6,
+  },
+  headerMenuIconWrapper: {
+    padding: 8,
+    borderRadius: 6,
+    backgroundColor: "#efefef",
+  },
+  headerMenuIcon: {
+    width: 16,
+    height: 16,
+  },
 });

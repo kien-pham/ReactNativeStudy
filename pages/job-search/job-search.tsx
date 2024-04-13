@@ -1,16 +1,23 @@
 import React from "react";
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import JobHeader from "./components/job-header";
 import JobPopular from "./components/job-popular";
 import JobNearby from "./components/job-nearby";
+import JobSearchBar from "./components/job-search-bar";
 
-export default function JobSearch() {
+export default function JobSearchApp() {
   return (
-    <View>
+    <View style={styles.container}>
       <JobHeader />
-      <JobSearch />
+      <JobSearchBar />
       <JobPopular />
       <JobNearby />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 12,
+  },
+});
