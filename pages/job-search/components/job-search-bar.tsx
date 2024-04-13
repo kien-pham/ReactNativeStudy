@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -48,9 +48,16 @@ function SearchForm() {
   );
 }
 
-function FilterItem({ filterItem }: { filterItem: JobSearchFilter }) {
+function FilterItem({
+  filterItem,
+  onFilterClick,
+}: {
+  filterItem: JobSearchFilter;
+  onFilterClick: (filterLabel: JobSearchFilter["label"]) => void;
+}) {
   return (
     <TouchableOpacity
+      onPress={() => onFilterClick(filterItem.label)}
       style={[
         styles.searchFilterItem,
         filterItem.isActive
@@ -73,10 +80,26 @@ function FilterItem({ filterItem }: { filterItem: JobSearchFilter }) {
 }
 
 function SearchFilter() {
+  const [activeFilter, setActiveFilter] =
+    useState<JobSearchFilter["label"]>("Full-time");
+
+  const handleFilterClick = (filterLabel: JobSearchFilter["label"]) => {
+    setActiveFilter(filterLabel);
+  };
+
+  const searchFiltersWithActiveState = searchFilters.map((filter) => ({
+    ...filter,
+    isActive: filter.label === activeFilter,
+  }));
+
   return (
     <View style={styles.searchFilterWrapper}>
-      {searchFilters.map((filter) => (
-        <FilterItem key={filter.label} filterItem={filter} />
+      {searchFiltersWithActiveState.map((filter) => (
+        <FilterItem
+          key={filter.label}
+          filterItem={filter}
+          onFilterClick={handleFilterClick}
+        />
       ))}
     </View>
   );
