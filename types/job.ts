@@ -13,3 +13,8 @@ export type Job = {
   postedDate: Date;
   expiredTime: Date;
 };
+
+export type JobSearchFilter = {
+  label: string;
+  isActive: boolean;
+};
