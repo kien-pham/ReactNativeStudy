@@ -3,6 +3,7 @@ export type Job = {
   jobTitle: string;
   jobDescription: string;
   company: string;
+  companyLogo: string;
   jobType: string;
   jobField: string;
   location: string;
