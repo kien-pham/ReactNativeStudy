@@ -8,8 +8,9 @@ import {
   View,
 } from "react-native";
 import { Job } from "../../../types/job";
-import { apiClient } from "../../../services/api-client";
-import { JOBS_API_URL } from "../job-search";
+import { apiClient, JOBS_API_URL } from "../../../services/api-client";
+import { useNavigation } from "@react-navigation/native";
+import { ScreenNavProps, ScreenName } from "../../../types/navigation";
 
 function JobNearbyHeading() {
   return (
@@ -21,8 +22,13 @@ function JobNearbyHeading() {
 }
 
 function JobItem({ jobData }: { jobData: Job }) {
+  const navigation = useNavigation<ScreenNavProps>();
+
   return (
-    <TouchableOpacity style={styles.jobItemWrapper}>
+    <TouchableOpacity
+      style={styles.jobItemWrapper}
+      onPress={() => navigation.navigate(ScreenName.JobDetail, { jobData })}
+    >
       <Image source={{ uri: jobData.jobImage }} style={styles.jobItemLogo} />
 
       <View style={styles.jobDetail}>
