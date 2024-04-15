@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   searchButton: {
     padding: 8,
-    backgroundColor: "orange",
+    backgroundColor: "tomato",
     borderRadius: 12,
     marginLeft: 8,
     display: "flex",
