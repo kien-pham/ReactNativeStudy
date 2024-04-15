@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import {
   FlatList,
   Image,
@@ -21,7 +21,7 @@ function JobPopularHeading() {
   );
 }
 
-function JobItem({ jobData }: { jobData: Job }) {
+const JobItem = memo(({ jobData }: { jobData: Job }) => {
   const navigation = useNavigation<ScreenNavProps>();
 
   return (
@@ -38,7 +38,7 @@ function JobItem({ jobData }: { jobData: Job }) {
       </Text>
     </TouchableOpacity>
   );
-}
+});
 
 function JobPopularList() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -66,6 +66,9 @@ function JobPopularList() {
       horizontal
       renderItem={({ item }) => <JobItem jobData={item} />}
       keyExtractor={(job) => job.id}
+      initialNumToRender={5}
+      maxToRenderPerBatch={5}
+      windowSize={5}
     />
   );
 }
@@ -100,8 +103,10 @@ const styles = StyleSheet.create({
     margin: 8,
     backgroundColor: "#fff",
     borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#eee",
 
-    shadowColor: "#666",
+    shadowColor: "#ccc",
     shadowOffset: {
       width: 0,
       height: 2,

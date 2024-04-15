@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import {
   FlatList,
   Image,
@@ -21,7 +21,7 @@ function JobNearbyHeading() {
   );
 }
 
-function JobItem({ jobData }: { jobData: Job }) {
+const JobItem = memo(({ jobData }: { jobData: Job }) => {
   const navigation = useNavigation<ScreenNavProps>();
 
   return (
@@ -41,7 +41,7 @@ function JobItem({ jobData }: { jobData: Job }) {
       </View>
     </TouchableOpacity>
   );
-}
+});
 
 function JobNearbyList() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -68,6 +68,9 @@ function JobNearbyList() {
       data={jobs}
       renderItem={({ item }) => <JobItem jobData={item} />}
       keyExtractor={(job) => job.id}
+      initialNumToRender={5}
+      maxToRenderPerBatch={5}
+      windowSize={5}
     />
   );
 }
@@ -104,8 +107,10 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     display: "flex",
     flexDirection: "row",
+    borderWidth: 1,
+    borderColor: "#eee",
 
-    shadowColor: "#999",
+    shadowColor: "#ccc",
     shadowOffset: {
       width: 0,
       height: 2,

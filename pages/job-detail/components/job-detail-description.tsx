@@ -27,14 +27,7 @@ function JobTabs({
           onPress={() => onChangeTab(tab as JobTabsType)}
           style={[styles.tabItem, isActive(tab) ? styles.tabItemActive : null]}
         >
-          <Text
-            style={[
-              styles.tabTitle,
-              isActive(tab) ? styles.tabTitleActive : null,
-            ]}
-          >
-            {tab}
-          </Text>
+          <Text style={[styles.tabTitle]}>{tab}</Text>
         </TouchableOpacity>
       ))}
     </View>
@@ -81,28 +74,26 @@ export default function JobDetailDescription({ jobData }: { jobData: Job }) {
 const styles = StyleSheet.create({
   tabsContainer: {
     flexDirection: "row",
-    justifyContent: "center",
+    marginLeft: 14,
     gap: 12,
   },
   tabTitle: {
     textTransform: "capitalize",
   },
-  tabTitleActive: {
-    color: "#fff",
-  },
   tabItem: {
     padding: 10,
     borderRadius: 8,
+    borderBottomEndRadius: 0,
+    borderBottomStartRadius: 0,
     borderWidth: 1,
-    borderColor: "#ddd",
-    backgroundColor: "#995db547",
+    borderColor: "#eee",
   },
   tabItemActive: {
-    backgroundColor: "#995db5",
+    backgroundColor: "#fff",
+    borderBottomColor: "#fff",
   },
   tabContentWrapper: {
     padding: 24,
-    marginTop: 12,
     borderRadius: 8,
     backgroundColor: "#fff",
   },
