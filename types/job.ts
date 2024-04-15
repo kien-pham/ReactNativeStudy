@@ -4,7 +4,9 @@ export type Job = {
   jobDescription: string;
   jobImage: string;
   company: string;
+  companyInfo: string;
   companyLogo: string;
+  reviewInfo: string;
   jobType: string;
   jobField: string;
   location: string;
@@ -19,3 +21,9 @@ export type JobSearchFilter = {
   label: string;
   isActive: boolean;
 };
+
+export enum JobTabsType {
+  "description" = "description",
+  "company" = "company",
+  "reviews" = "reviews",
+}

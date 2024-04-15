@@ -1,10 +1,11 @@
 import { useRoute } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { JobDetailScreenRouteProp } from "../../types/navigation";
 import JobDetailHeader from "./components/job-detail-header";
 import JobDetailInfo from "./components/job-detail-info";
 import JobDetailActions from "./components/job-detail-actions";
+import JobDetailDescription from "./components/job-detail-description";
 
 export default function JobDetail() {
   const { params } = useRoute<JobDetailScreenRouteProp>();
@@ -15,8 +16,7 @@ export default function JobDetail() {
       <View style={styles.wrapper}>
         <JobDetailHeader />
         <JobDetailInfo jobData={jobData} />
-
-        <Text>{jobData.jobTitle}</Text>
+        <JobDetailDescription jobData={jobData} />
       </View>
 
       <JobDetailActions />
