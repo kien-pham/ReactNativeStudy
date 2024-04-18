@@ -1,6 +1,20 @@
 import React from "react";
-import { Text } from "react-native";
+import { Image, Text, View } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+import { IMAGES } from "src/constant/images";
+import { THEME } from "src/constant/theme";
+import { styles } from "./style";
 
 export default function SplashScreen() {
-  return <Text>SplashScreen</Text>;
+  return (
+    <View style={styles.container}>
+      <Image source={IMAGES.SplashScreenBg} resizeMode="contain" />
+      <LinearGradient
+        style={styles.gradientBg}
+        colors={[THEME.colors.transparent, THEME.colors.black]}
+      >
+        <Text>test</Text>
+      </LinearGradient>
+    </View>
+  );
 }
