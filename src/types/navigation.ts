@@ -4,7 +4,11 @@ import { AppScreen } from "../constant/screen";
 
 export type RootStackParamList = {
   SplashScreen: undefined;
+  MainTabs: undefined;
   MainScreen: undefined;
+  SearchScreen: undefined;
+  BookmarksScreen: undefined;
+  SettingsScreen: undefined;
 };
 
 export type ScreenNavProps = StackNavigationProp<

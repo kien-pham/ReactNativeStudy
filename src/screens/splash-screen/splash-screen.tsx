@@ -32,7 +32,7 @@ export default function SplashScreen() {
             label="Login"
             btnStyle={styles.loginBtn}
             textStyle={styles.loginBtnLabel}
-            onPress={() => navigation.navigate(AppScreen.MainScreen)}
+            onPress={() => navigation.navigate(AppScreen.MainTabs)}
           />
           <ActionButton
             label="Sign up"

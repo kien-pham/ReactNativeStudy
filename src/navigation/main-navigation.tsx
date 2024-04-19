@@ -8,13 +8,10 @@ import BottomTabsNavigation from "./bottom-tabs-navigation";
 export default function MainNavigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName={AppScreen.SplashScreen}
-        screenOptions={{ headerShown: false }}
-      >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name={AppScreen.SplashScreen} component={SplashScreen} />
         <Stack.Screen
-          name={AppScreen.MainScreen}
+          name={AppScreen.MainTabs}
           component={BottomTabsNavigation}
         />
       </Stack.Navigator>
