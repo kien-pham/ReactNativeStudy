@@ -5,8 +5,12 @@ import { IMAGES } from "src/constant/images";
 import { THEME } from "src/constant/theme";
 import { styles } from "./style";
 import ActionButton from "src/components/button/button";
+import { useNavigation } from "@react-navigation/native";
+import { ScreenNavProps } from "src/types/navigation";
+import { AppScreen } from "src/constant/screen";
 
 export default function SplashScreen() {
+  const navigation = useNavigation<ScreenNavProps>();
   return (
     <View style={styles.container}>
       <Image source={IMAGES.SplashScreenBg} resizeMode="contain" />
@@ -28,6 +32,7 @@ export default function SplashScreen() {
             label="Login"
             btnStyle={styles.loginBtn}
             textStyle={styles.loginBtnLabel}
+            onPress={() => navigation.navigate(AppScreen.MainScreen)}
           />
           <ActionButton
             label="Sign up"
