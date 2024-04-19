@@ -2,4 +2,7 @@
 export enum AppScreen {
   SplashScreen = "SplashScreen",
   MainScreen = "MainScreen",
+  SearchScreen = "SearchScreen",
+  BookmarksScreen = "BookmarksScreen",
+  SettingsScreen = "SettingsScreen",
 }
