@@ -6,7 +6,6 @@ import SearchScreen from "src/screens/search-screen/search-screen";
 import BookmarkScreen from "src/screens/bookmark-screen/bookmark-screen";
 import SettingsScreen from "src/screens/settings-screen/settings-screen";
 import TabIcon from "src/components/tab-icon/tab-icon";
-import { THEME } from "src/constant/theme";
 
 const homeIcon = require("@appAssets/icon/home-icon.png");
 const searchIcon = require("@appAssets/icon/search-icon.png");
