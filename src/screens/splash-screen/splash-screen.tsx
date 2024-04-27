@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { IMAGES } from "src/constant/images";
 import { THEME } from "src/constant/theme";
 import { styles } from "./style";
-import ActionButton from "src/components/button/button";
+import ActionButton from "src/components/button/action-button";
 import { useNavigation } from "@react-navigation/native";
 import { ScreenNavProps } from "src/types/navigation";
 import { AppScreen } from "src/constant/screen";
