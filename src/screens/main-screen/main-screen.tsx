@@ -1,10 +1,12 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { SafeAreaView } from "react-native";
+import { styles } from "./style";
+import WelcomeHeader from "./welcome-header";
 
 export default function MainScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Main</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <WelcomeHeader />
+    </SafeAreaView>
   );
 }

@@ -6,6 +6,7 @@ import SearchScreen from "src/screens/search-screen/search-screen";
 import BookmarkScreen from "src/screens/bookmark-screen/bookmark-screen";
 import SettingsScreen from "src/screens/settings-screen/settings-screen";
 import TabIcon from "src/components/tab-icon/tab-icon";
+import { THEME } from "src/constant/theme";
 
 const homeIcon = require("@appAssets/icon/home-icon.png");
 const searchIcon = require("@appAssets/icon/search-icon.png");
@@ -15,7 +16,13 @@ const settingsIcon = require("@appAssets/icon/settings-icon.png");
 export default function BottomTabsNavigation() {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          borderTopWidth: 0,
+        },
+      }}
     >
       <Tab.Screen
         name={AppScreen.MainScreen}
