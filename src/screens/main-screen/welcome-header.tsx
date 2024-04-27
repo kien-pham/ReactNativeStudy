@@ -1,7 +1,7 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
-import { styles } from "./style";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { IMAGES } from "src/constant/images";
+import { THEME } from "src/constant/theme";
 
 export default function WelcomeHeader() {
   return (
@@ -18,3 +18,26 @@ export default function WelcomeHeader() {
     </View>
   );
 }
+
+export const styles = StyleSheet.create({
+  wrapper: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: THEME.spacing.xl,
+  },
+  avatar: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  title: {
+    color: THEME.colors.gray["600"],
+    fontSize: THEME.fontSizes.xl,
+    fontWeight: "500",
+    marginBottom: THEME.spacing.md,
+  },
+  subTitle: {
+    color: THEME.colors.gray["500"],
+    fontSize: THEME.fontSizes.sm,
+  },
+});
