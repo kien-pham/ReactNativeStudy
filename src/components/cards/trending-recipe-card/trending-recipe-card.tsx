@@ -1,6 +1,6 @@
 import { BlurView } from "expo-blur";
 import React, { memo } from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
 import { Recipe } from "src/types/recipe";
@@ -17,27 +17,35 @@ export function TrendingRecipeCardSkeleton() {
   );
 }
 
-function TrendingRecipeCard({ recipe }: { recipe: Recipe }) {
+function TrendingRecipeCard({
+  recipe,
+  onPress,
+}: {
+  recipe: Recipe;
+  onPress?: (recipeId: string) => void;
+}) {
   return (
-    <View style={styles.container}>
-      <Image source={{ uri: recipe.strMealThumb }} style={styles.image} />
+    <TouchableOpacity onPress={() => onPress?.(recipe.idMeal)}>
+      <View style={styles.container}>
+        <Image source={{ uri: recipe.strMealThumb }} style={styles.image} />
 
-      <View style={styles.contentWrapper}>
-        <BlurView intensity={60} style={styles.tagWrapper}>
-          <Text style={[styles.textWhite, styles.textSmall]}>
-            {recipe.strCategory}
-          </Text>
-        </BlurView>
+        <View style={styles.contentWrapper}>
+          <BlurView intensity={60} style={styles.tagWrapper}>
+            <Text style={[styles.textWhite, styles.textSmall]}>
+              {recipe.strCategory}
+            </Text>
+          </BlurView>
 
-        <BlurView intensity={50} style={styles.infoWrapper}>
-          <View style={styles.infoTitleBox}>
-            <Text style={styles.textTitle}>{recipe.strMeal}</Text>
-            <Image source={ICONS.BookmarkIcon} style={styles.bookmarkIcon} />
-          </View>
-          <Text style={[styles.subTitle]}>{recipe.strCategory}</Text>
-        </BlurView>
+          <BlurView intensity={50} style={styles.infoWrapper}>
+            <View style={styles.infoTitleBox}>
+              <Text style={styles.textTitle}>{recipe.strMeal}</Text>
+              <Image source={ICONS.BookmarkIcon} style={styles.bookmarkIcon} />
+            </View>
+            <Text style={[styles.subTitle]}>{recipe.strCategory}</Text>
+          </BlurView>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 export default memo(TrendingRecipeCard);

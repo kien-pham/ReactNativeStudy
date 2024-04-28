@@ -1,16 +1,14 @@
 import React from "react";
 import { AppScreen } from "src/constant/screen";
-import { Tab } from "./tab";
 import MainScreen from "src/screens/main-screen/main-screen";
 import SearchScreen from "src/screens/search-screen/search-screen";
 import BookmarkScreen from "src/screens/bookmark-screen/bookmark-screen";
 import SettingsScreen from "src/screens/settings-screen/settings-screen";
 import TabIcon from "src/components/tab-icon/tab-icon";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { ICONS } from "src/constant/icons";
 
-const homeIcon = require("@appAssets/icon/home-icon.png");
-const searchIcon = require("@appAssets/icon/search-icon.png");
-const bookmarkIcon = require("@appAssets/icon/bookmark-icon.png");
-const settingsIcon = require("@appAssets/icon/settings-icon.png");
+const Tab = createBottomTabNavigator();
 
 export default function BottomTabsNavigation() {
   return (
@@ -28,7 +26,7 @@ export default function BottomTabsNavigation() {
         component={MainScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabIcon icon={homeIcon} isFocused={focused} />
+            <TabIcon icon={ICONS.HomeIcon} isFocused={focused} />
           ),
         }}
       />
@@ -37,7 +35,7 @@ export default function BottomTabsNavigation() {
         component={SearchScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabIcon icon={searchIcon} isFocused={focused} />
+            <TabIcon icon={ICONS.SearchIcon} isFocused={focused} />
           ),
         }}
       />
@@ -46,7 +44,7 @@ export default function BottomTabsNavigation() {
         component={BookmarkScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabIcon icon={bookmarkIcon} isFocused={focused} />
+            <TabIcon icon={ICONS.BookmarkIcon} isFocused={focused} />
           ),
         }}
       />
@@ -55,7 +53,7 @@ export default function BottomTabsNavigation() {
         component={SettingsScreen}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TabIcon icon={settingsIcon} isFocused={focused} />
+            <TabIcon icon={ICONS.SettingsIcon} isFocused={focused} />
           ),
         }}
       />

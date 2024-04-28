@@ -9,6 +9,7 @@ export type RootStackParamList = {
   SearchScreen: undefined;
   BookmarksScreen: undefined;
   SettingsScreen: undefined;
+  DetailScreen: { recipeId: string };
 };
 
 export type ScreenNavProps = StackNavigationProp<
