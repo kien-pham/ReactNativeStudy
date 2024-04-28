@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import TrendingRecipeCard from "src/components/cards/trending-recipe-card/trending-recipe-card";
 import { THEME } from "src/constant/theme";
+import { Recipe } from "src/types/recipe";
 
 export default function TrendingRecipes() {
   return (
@@ -11,7 +12,9 @@ export default function TrendingRecipes() {
         horizontal
         showsHorizontalScrollIndicator={false}
         data={[1, 2, 3]}
-        renderItem={({ item }) => <TrendingRecipeCard />}
+        renderItem={({ item }) => (
+          <TrendingRecipeCard recipe={item as unknown as Recipe} />
+        )}
       />
     </View>
   );
@@ -25,6 +28,6 @@ const styles = StyleSheet.create({
   heading: {
     fontSize: THEME.fontSizes.lg,
     fontWeight: "700",
-    marginBottom: THEME.spacing.lg,
+    marginBottom: THEME.spacing.xl,
   },
 });

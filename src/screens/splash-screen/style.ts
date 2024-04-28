@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   loginBtn: {
     padding: THEME.spacing.xl,
     marginBottom: THEME.spacing.xl,
-    backgroundColor: THEME.colors.cygan[400],
+    backgroundColor: THEME.colors.primary[500],
     borderRadius: THEME.spacing.md,
   },
   loginBtnLabel: {

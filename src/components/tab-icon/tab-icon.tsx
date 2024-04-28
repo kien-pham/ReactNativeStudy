@@ -28,10 +28,14 @@ const styles = StyleSheet.create({
     height: 48,
   },
   iconActive: {
-    tintColor: THEME.colors.cygan[400],
+    tintColor: THEME.colors.primary[500],
+    width: 20,
+    height: 20,
   },
   iconNormal: {
     tintColor: THEME.colors.gray[400],
+    width: 20,
+    height: 20,
   },
   tabActive: {
     position: "absolute",
@@ -39,6 +43,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 3,
     borderRadius: 10,
-    backgroundColor: THEME.colors.cygan[400],
+    backgroundColor: THEME.colors.primary[500],
   },
 });

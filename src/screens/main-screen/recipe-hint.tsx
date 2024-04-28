@@ -7,7 +7,7 @@ export default function RecipeHint() {
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
-        <Image source={ICONS.FoodSaladIcon} />
+        <Image source={ICONS.FoodIcon} />
         <View style={styles.textWrapper}>
           <Text style={{ flexShrink: 1 }}>
             You have 12 recipes that you haven't tried yet
@@ -25,18 +25,18 @@ export const styles = StyleSheet.create({
   },
   wrapper: {
     flexDirection: "row",
-    backgroundColor: THEME.colors.cygan["200"],
+    backgroundColor: THEME.colors.primary[300],
     padding: THEME.spacing.xl,
     borderRadius: 8,
   },
   textWrapper: {
-    marginLeft: THEME.spacing.lg,
+    marginLeft: THEME.spacing.xl,
     flexGrow: 1,
     flex: 1,
     justifyContent: "space-between",
   },
   textLink: {
-    color: THEME.colors.cygan["600"],
+    color: THEME.colors.primary[500],
     fontWeight: "600",
     textDecorationLine: "underline",
   },

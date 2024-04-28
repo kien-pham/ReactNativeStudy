@@ -4,8 +4,9 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { ICONS } from "src/constant/icons";
 import { IMAGES } from "src/constant/images";
 import { THEME } from "src/constant/theme";
+import { Recipe } from "src/types/recipe";
 
-export default function TrendingRecipeCard() {
+export default function TrendingRecipeCard({ recipe }: { recipe: Recipe }) {
   return (
     <View style={styles.container}>
       <Image source={IMAGES.SplashScreenBg} style={styles.image} />
@@ -93,6 +94,8 @@ const styles = StyleSheet.create({
     fontSize: THEME.fontSizes.xs,
   },
   bookmarkIcon: {
-    tintColor: THEME.colors.cygan[300],
+    tintColor: THEME.colors.primary[500],
+    width: 20,
+    height: 20,
   },
 });

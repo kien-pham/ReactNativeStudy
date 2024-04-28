@@ -31,13 +31,13 @@ export const styles = StyleSheet.create({
     borderRadius: 20,
   },
   title: {
-    color: THEME.colors.gray["600"],
+    color: THEME.colors.gray[600],
     fontSize: THEME.fontSizes.xl,
-    fontWeight: "500",
+    fontWeight: "600",
     marginBottom: THEME.spacing.md,
   },
   subTitle: {
-    color: THEME.colors.gray["500"],
+    color: THEME.colors.gray["400"],
     fontSize: THEME.fontSizes.sm,
   },
 });
