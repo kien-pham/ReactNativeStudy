@@ -22,3 +22,8 @@ export type ScreenNavRouteProp = RouteProp<
   RootStackParamList,
   AppScreen.MainScreen
 >;
+
+export type DetailScreenRouteProp = RouteProp<
+  RootStackParamList,
+  AppScreen.DetailScreen
+>;
