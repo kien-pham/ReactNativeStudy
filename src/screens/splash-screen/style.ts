@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   mainTitle: {
     color: THEME.colors.white,
     fontSize: THEME.fontSizes["4xl"],
-    fontWeight: "bold",
+    fontWeight: "500",
     marginBottom: THEME.spacing.lg,
   },
   subTitle: {

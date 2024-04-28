@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { recipeApi } from "../recipe-api/recipe-api";
 
 export const store = configureStore({
   reducer: {
-    // someState: someStateReducer,
+    [recipeApi.reducerPath]: recipeApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(recipeApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
