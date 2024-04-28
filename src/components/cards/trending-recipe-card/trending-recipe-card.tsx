@@ -1,11 +1,11 @@
 import { BlurView } from "expo-blur";
-import React from "react";
+import React, { memo } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
 import { Recipe } from "src/types/recipe";
 
-function TrendingRecipeCardSkeleton() {
+export function TrendingRecipeCardSkeleton() {
   return (
     <View style={styles.container}>
       <View style={styles.skeletonCard} />
@@ -17,7 +17,7 @@ function TrendingRecipeCardSkeleton() {
   );
 }
 
-export default function TrendingRecipeCard({ recipe }: { recipe: Recipe }) {
+function TrendingRecipeCard({ recipe }: { recipe: Recipe }) {
   return (
     <View style={styles.container}>
       <Image source={{ uri: recipe.strMealThumb }} style={styles.image} />
@@ -40,8 +40,7 @@ export default function TrendingRecipeCard({ recipe }: { recipe: Recipe }) {
     </View>
   );
 }
-
-TrendingRecipeCard.Skeleton = TrendingRecipeCardSkeleton;
+export default memo(TrendingRecipeCard);
 
 const styles = StyleSheet.create({
   container: {
