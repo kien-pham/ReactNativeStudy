@@ -8,7 +8,6 @@ import { AppScreen } from "src/constant/screen";
 import { THEME } from "src/constant/theme";
 import { useGetTrendingRecipesQuery } from "src/services/recipe-api/recipe-api";
 import { ScreenNavProps } from "src/types/navigation";
-import { ResponseRecipes } from "src/types/recipe";
 
 const NUMBER_OF_TRENDING_RECIPES_PER_LOAD = 3;
 
@@ -27,7 +26,7 @@ export default function TrendingRecipes() {
       </View>
     );
 
-  if (data !== undefined)
+  if (data)
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>Trending Recipes</Text>
@@ -35,7 +34,7 @@ export default function TrendingRecipes() {
           horizontal
           showsHorizontalScrollIndicator={false}
           initialNumToRender={NUMBER_OF_TRENDING_RECIPES_PER_LOAD}
-          data={(data as unknown as ResponseRecipes).meals || []}
+          data={data.meals}
           renderItem={({ item }) => (
             <TrendingRecipeCard
               key={item.idMeal}
