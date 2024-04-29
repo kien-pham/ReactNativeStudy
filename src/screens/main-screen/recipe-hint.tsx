@@ -9,7 +9,7 @@ export default function RecipeHint() {
       <View style={styles.wrapper}>
         <Image source={ICONS.FoodIcon} />
         <View style={styles.textWrapper}>
-          <Text style={{ flexShrink: 1 }}>
+          <Text style={styles.hintText}>
             You have 12 recipes that you haven't tried yet
           </Text>
           <Text style={styles.textLink}>See Recipes</Text>
@@ -40,4 +40,5 @@ export const styles = StyleSheet.create({
     fontWeight: "600",
     textDecorationLine: "underline",
   },
+  hintText: { flexShrink: 1 },
 });

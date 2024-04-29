@@ -23,3 +23,14 @@ type ResponseRecipesFromApi = Omit<Recipe, "ingredients" | "measures"> & {
 export type ResponseRecipes = {
   meals: ResponseRecipesFromApi[];
 };
+
+export type RecipeCategory = {
+  idCategory: string;
+  strCategory: string;
+  strCategoryThumb: string;
+  strCategoryDescription: string;
+};
+
+export type ResponseCategories = {
+  categories: RecipeCategory[];
+};

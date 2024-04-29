@@ -5,6 +5,7 @@ import WelcomeHeader from "./welcome-header";
 import SearchForm from "./search-form";
 import RecipeHint from "./recipe-hint";
 import TrendingRecipes from "./trending-recipes";
+import RecipeCategories from "./recipe-categories";
 
 export default function MainScreen() {
   return (
@@ -14,6 +15,7 @@ export default function MainScreen() {
         <SearchForm />
         <RecipeHint />
         <TrendingRecipes />
+        <RecipeCategories />
       </ScrollView>
     </SafeAreaView>
   );
