@@ -9,29 +9,17 @@ export type Recipe = {
   strSource?: string | null;
   strImageSource?: string | null;
 
-  strIngredient1?: string | null;
-  strIngredient2?: string | null;
-  strIngredient3?: string | null;
-  strIngredient4?: string | null;
-  strIngredient5?: string | null;
-  strIngredient6?: string | null;
-  strIngredient7?: string | null;
-  strIngredient8?: string | null;
-  strIngredient9?: string | null;
-  strIngredient10?: string | null;
+  ingredients?: string[];
+  measures?: string[];
+};
+type KeyNumbers = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+export type MeasureKey = `strMeasure${KeyNumbers}`;
+export type IngredientKey = `strIngredient${KeyNumbers}`;
 
-  strMeasure1?: string | null;
-  strMeasure2?: string | null;
-  strMeasure3?: string | null;
-  strMeasure4?: string | null;
-  strMeasure5?: string | null;
-  strMeasure6?: string | null;
-  strMeasure7?: string | null;
-  strMeasure8?: string | null;
-  strMeasure9?: string | null;
-  strMeasure10?: string | null;
+type ResponseRecipesFromApi = Omit<Recipe, "ingredients" | "measures"> & {
+  [K in IngredientKey | MeasureKey]: string | null;
 };
 
 export type ResponseRecipes = {
-  meals: Recipe[];
+  meals: ResponseRecipesFromApi[];
 };

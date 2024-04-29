@@ -10,7 +10,8 @@ import { ScreenNavProps } from "src/types/navigation";
 import { AppScreen } from "src/constant/screen";
 
 export default function SplashScreen() {
-  const navigation = useNavigation<ScreenNavProps>();
+  const { navigate } = useNavigation<ScreenNavProps>();
+
   return (
     <View style={styles.container}>
       <Image source={IMAGES.SplashScreenBg} resizeMode="contain" />
@@ -32,7 +33,7 @@ export default function SplashScreen() {
             label="Login"
             btnStyle={styles.loginBtn}
             textStyle={styles.loginBtnLabel}
-            onPress={() => navigation.navigate(AppScreen.MainTabs)}
+            onPress={() => navigate(AppScreen.MainTabs)}
           />
           <ActionButton
             label="Sign up"

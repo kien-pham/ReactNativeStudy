@@ -7,6 +7,7 @@ const HomeIcon = require("@appAssets/icon/home-icon.png");
 const SettingsIcon = require("@appAssets/icon/settings-icon.png");
 const BackIcon = require("@appAssets/icon/back-icon.png");
 const NextIcon = require("@appAssets/icon/next-icon.png");
+const IngredientIcon = require("@appAssets/icon/ingredient-icon.png");
 
 export const ICONS: { [key: string]: ImageSourcePropType } = {
   HomeIcon,
@@ -16,4 +17,5 @@ export const ICONS: { [key: string]: ImageSourcePropType } = {
   FoodIcon,
   BackIcon,
   NextIcon,
+  IngredientIcon,
 };
