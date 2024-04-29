@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   contentContainer: {
     position: "absolute",
     bottom: 16,
-    width: "100%",
+    width: THEME.sizes.full as DimensionValue,
     padding: THEME.spacing["2xl"],
   },
   mainTitle: {

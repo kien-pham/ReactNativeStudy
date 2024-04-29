@@ -1,7 +1,29 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { THEME } from "src/constant/theme";
 import { useGetCategoriesQuery } from "src/services/recipe-api/recipe-api";
+import { RecipeCategory } from "src/types/recipe";
+
+function CategoryList({ categories }: { categories: RecipeCategory[] }) {
+  return (
+    <View>
+      {categories.map((category) => (
+        <View key={category.idCategory} style={styles.categoryItemWrapper}>
+          <Image
+            source={{ uri: category.strCategoryThumb }}
+            style={styles.categoryImg}
+          />
+          <View style={styles.categoryContentWrapper}>
+            <Text style={styles.categoryTitle}>{category.strCategory}</Text>
+            <Text style={styles.categorySubtitle}>
+              {getRandomNumber(20, 50)} mins | {getRandomNumber(1, 4)} Serving
+            </Text>
+          </View>
+        </View>
+      ))}
+    </View>
+  );
+}
 
 export default function RecipeCategories() {
   const { data } = useGetCategoriesQuery();
@@ -13,24 +35,8 @@ export default function RecipeCategories() {
           <Text style={styles.heading}>Categories</Text>
           <Text style={styles.subHeading}>View All</Text>
         </View>
-        <FlatList
-          data={data.categories}
-          renderItem={({ item }) => (
-            <View key={item.idCategory} style={styles.categoryItemWrapper}>
-              <Image
-                source={{ uri: item.strCategoryThumb }}
-                style={styles.categoryImg}
-              />
-              <View style={styles.categoryContentWrapper}>
-                <Text style={styles.categoryTitle}>{item.strCategory}</Text>
-                <Text style={styles.categorySubtitle}>
-                  {getRandomNumber(20, 50)} mins | {getRandomNumber(1, 4)}{" "}
-                  Serving
-                </Text>
-              </View>
-            </View>
-          )}
-        />
+
+        <CategoryList categories={data.categories} />
       </View>
     );
 }

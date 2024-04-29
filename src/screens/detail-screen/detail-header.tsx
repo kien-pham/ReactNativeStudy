@@ -1,5 +1,12 @@
 import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  DimensionValue,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { Recipe } from "src/types/recipe";
 import { BlurView } from "expo-blur";
 import { ICONS } from "src/constant/icons";
@@ -115,14 +122,14 @@ const styles = StyleSheet.create({
     gap: THEME.spacing.xl,
   },
   imageWrapper: {
-    height: "100%",
-    width: "100%",
+    height: THEME.sizes.full as DimensionValue,
+    width: THEME.sizes.full as DimensionValue,
     position: "absolute",
     backgroundColor: "black",
   },
   image: {
     opacity: 0.9,
-    height: "100%",
+    height: THEME.sizes.full as DimensionValue,
   },
   creatorTitle: {
     color: THEME.colors.gray[800],

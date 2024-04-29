@@ -1,5 +1,11 @@
 import React from "react";
-import { Image, ImageSourcePropType, StyleSheet, View } from "react-native";
+import {
+  DimensionValue,
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  View,
+} from "react-native";
 import { THEME } from "src/constant/theme";
 
 export default function TabIcon({
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
   tabActive: {
     position: "absolute",
     bottom: 0,
-    width: "100%",
+    width: THEME.sizes.full as DimensionValue,
     height: 3,
     borderRadius: 10,
     backgroundColor: THEME.colors.primary[500],

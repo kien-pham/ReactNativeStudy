@@ -1,5 +1,12 @@
 import React from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  DimensionValue,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import UserAvatar from "src/components/avatar/user-avatar";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
@@ -110,7 +117,7 @@ const styles = StyleSheet.create({
   },
   recipeTitle: {
     fontWeight: "600",
-    width: "100%",
+    width: THEME.sizes.full as DimensionValue,
     fontSize: THEME.fontSizes.xl,
     maxWidth: 220,
   },
@@ -144,7 +151,7 @@ const styles = StyleSheet.create({
   ingredientsContentWrapper: {
     flexDirection: "row",
     justifyContent: "space-between",
-    height: "100%",
+    height: THEME.sizes.full as DimensionValue,
   },
   ingredientItem: {
     flexDirection: "row",
@@ -152,7 +159,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: THEME.spacing.lg,
     paddingLeft: 0,
-    width: "100%",
+    width: THEME.sizes.full as DimensionValue,
   },
   ingredientItemTitle: {
     flexDirection: "row",

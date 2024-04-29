@@ -1,6 +1,13 @@
 import { BlurView } from "expo-blur";
 import React, { memo } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  DimensionValue,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
 import { Recipe } from "src/types/recipe";
@@ -75,8 +82,8 @@ const styles = StyleSheet.create({
   },
   image: {
     position: "absolute",
-    width: "100%",
-    height: "100%",
+    width: THEME.sizes.full as DimensionValue,
+    height: THEME.sizes.full as DimensionValue,
     objectFit: "cover",
     borderRadius: 12,
   },
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 8,
     overflow: "hidden",
-    width: "100%",
+    width: THEME.sizes.full as DimensionValue,
     height: 84,
     justifyContent: "space-between",
   },
@@ -127,8 +134,8 @@ const styles = StyleSheet.create({
   skeletonCard: {
     backgroundColor: THEME.colors.gray[100],
     position: "absolute",
-    width: "100%",
-    height: "100%",
+    width: THEME.sizes.full as DimensionValue,
+    height: THEME.sizes.full as DimensionValue,
     objectFit: "cover",
     borderRadius: 12,
   },
@@ -141,7 +148,7 @@ const styles = StyleSheet.create({
   skeletonInfo: {
     backgroundColor: THEME.colors.gray[200],
     borderRadius: 8,
-    width: "100%",
+    width: THEME.sizes.full as DimensionValue,
     height: 84,
   },
 });
