@@ -1,21 +1,17 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import MainNavigation from "src/navigation/main-navigation";
 
 export default function App() {
   return (
-    <View style={styles.wrapper}>
-      <Text>Hello World!</Text>
+    <View style={styles.container}>
+      <MainNavigation />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-    backgroundColor: "#efefef",
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+  container: {
+    flex: 1,
   },
 });
