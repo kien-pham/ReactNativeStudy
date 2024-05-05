@@ -22,6 +22,7 @@ export const THEME = {
       200: "#f4f2f1",
       300: "#fef3e7",
       400: "#fdeada",
+      450: "#f6cfad",
       500: "#fe8234",
       800: "#8f7768",
     },
@@ -45,6 +46,7 @@ export const THEME = {
     "4xl": 36,
   },
   spacing: {
+    appWrapper: 16,
     xs: 1,
     sm: 2,
     md: 4,

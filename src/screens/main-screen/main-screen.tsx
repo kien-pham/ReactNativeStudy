@@ -1,6 +1,11 @@
 import React from "react";
-import { Text } from "react-native";
+import { SafeAreaView, Text, View } from "react-native";
+import HeaderBar from "src/features/header-bar/header-bar";
 
 export default function MainScreen() {
-  return <Text>MainScreen</Text>;
+  return (
+    <SafeAreaView>
+      <HeaderBar />
+    </SafeAreaView>
+  );
 }

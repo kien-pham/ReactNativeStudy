@@ -16,6 +16,7 @@ const LibraryIcon = require("@appAssets/icons/reservation-table.png");
 const LikeIcon = require("@appAssets/icons/thumbs-up.png");
 const UserIcon = require("@appAssets/icons/user.png");
 const VideoIcon = require("@appAssets/icons/video-camera-alt.png");
+const BellIcon = require("@appAssets/icons/bell.png");
 
 export const ICONS: { [key: string]: ImageSourcePropType } = {
   AngryIcon,
@@ -34,4 +35,5 @@ export const ICONS: { [key: string]: ImageSourcePropType } = {
   LikeIcon,
   UserIcon,
   VideoIcon,
+  BellIcon,
 };
