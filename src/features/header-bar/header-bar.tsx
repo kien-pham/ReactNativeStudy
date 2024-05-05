@@ -22,12 +22,12 @@ export default function HeaderBar() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: THEME.colors.white,
+    // backgroundColor: THEME.colors.white,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     alignContent: "center",
-    padding: THEME.spacing.appWrapper,
+    padding: THEME.spacing.xl,
   },
   avatar: { width: 26, height: 26 },
   notificationWrapper: {

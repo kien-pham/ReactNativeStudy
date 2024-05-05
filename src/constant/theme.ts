@@ -8,12 +8,8 @@ export const THEME = {
       100: "#EDF2F7",
       200: "#E2E8F0",
       300: "#CBD5E0",
-      400: "#A0AEC0",
+      400: "#858585",
       500: "#718096",
-      600: "#4a5568",
-      700: "#2d3748",
-      800: "#1a202c",
-      900: "#171923",
     },
     primary: {
       20: "#fbfbfb",
@@ -46,7 +42,6 @@ export const THEME = {
     "4xl": 36,
   },
   spacing: {
-    appWrapper: 16,
     xs: 1,
     sm: 2,
     md: 4,
