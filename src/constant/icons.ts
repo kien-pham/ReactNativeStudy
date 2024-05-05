@@ -12,6 +12,7 @@ const ClockIcon = require("@appAssets/icons/clock-three.png");
 const CommentMiddleIcon = require("@appAssets/icons/comment-alt-middle.png");
 const HomeIcon = require("@appAssets/icons/home.png");
 const LotusIcon = require("@appAssets/icons/lotus.png");
+const LinkIcon = require("@appAssets/icons/link.png");
 const EditIcon = require("@appAssets/icons/pencil.png");
 const PlayIcon = require("@appAssets/icons/play.png");
 const QuoteIcon = require("@appAssets/icons/quote-right.png");
@@ -41,4 +42,5 @@ export const ICONS: { [key: string]: ImageSourcePropType } = {
   BellIcon,
   GoodIcon,
   YinYangIcon,
+  LinkIcon,
 };

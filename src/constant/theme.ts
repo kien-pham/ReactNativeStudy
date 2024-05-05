@@ -13,6 +13,7 @@ export const THEME = {
     },
     primary: {
       20: "#fbfbfb",
+      30: "#feedde",
       50: "#f8f6f6",
       100: "#d6ccc6",
       200: "#f4f2f1",
@@ -20,6 +21,7 @@ export const THEME = {
       400: "#fdeada",
       450: "#f6cfad",
       500: "#fe8234",
+      600: "#f09e54",
       800: "#8f7768",
     },
     secondary: {
@@ -48,6 +50,7 @@ export const THEME = {
     lg: 8,
     lg2: 12,
     xl: 16,
+    xl2: 28,
     "2xl": 32,
     "3xl": 48,
   },
