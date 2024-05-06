@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
 import { CATEGORIES } from "src/constant/sample-data";
 import Categories from "src/features/categories/categories";
 import HeaderBar from "src/features/header-bar/header-bar";
@@ -17,12 +17,17 @@ export default function MainScreen() {
 
       <ScrollView>
         <WelcomeHeading />
-        <Categories data={CATEGORIES} />
+        <View style={styles.bottomSpace}>
+          <Categories data={CATEGORIES} />
+        </View>
 
         <View style={styles.boxWrapper}>
           <ContentBox
             title="1 on 1 Sessions"
             content="Let's open up to the things that matter the most"
+            bgColor={THEME.colors.primary[30]}
+            bgImgColor={THEME.colors.primary[600]}
+            bgImg={ICONS.LinkIcon}
             actionBtn={
               <ActionLink
                 label="Book a Session"
@@ -30,13 +35,30 @@ export default function MainScreen() {
                 icon={ICONS.CalendarIcon}
               />
             }
-            bgColor={THEME.colors.primary[30]}
-            bgImgColor={THEME.colors.primary[600]}
-            bgImg={ICONS.LinkIcon}
           />
         </View>
 
-        <GroupBtns />
+        <View style={styles.bottomSpace}>
+          <GroupBtns />
+        </View>
+
+        <View style={styles.boxWrapper}>
+          <ContentBox
+            title="Plan Expired"
+            content="Get back chat access and session credits"
+            textColor={THEME.colors.white}
+            bgColor={THEME.colors.secondary[500]}
+            bgImgColor={THEME.colors.secondary[400]}
+            bgImg={ICONS.LotusIcon}
+            actionBtn={
+              <ActionLink
+                label="Buy More"
+                color={THEME.colors.white}
+                icon={ICONS.ArrowRight}
+              />
+            }
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -49,5 +71,8 @@ const styles = StyleSheet.create({
   },
   boxWrapper: {
     padding: THEME.spacing.xl,
+  },
+  bottomSpace: {
+    marginBottom: THEME.spacing.xl,
   },
 });

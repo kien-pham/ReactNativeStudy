@@ -5,6 +5,7 @@ import { THEME } from "src/constant/theme";
 export default function ContentBox({
   title,
   content,
+  textColor,
   actionBtn,
   bgImg,
   bgImgColor,
@@ -13,6 +14,7 @@ export default function ContentBox({
 }: {
   title: string;
   content: string;
+  textColor?: string;
   actionBtn: ReactNode;
   bgImg?: ImageProps["source"];
   bgImgColor?: string;
@@ -44,6 +46,7 @@ export default function ContentBox({
       fontSize: THEME.fontSizes.sm,
       color: THEME.colors.purple[900],
       marginTop: THEME.spacing.lg,
+      lineHeight: THEME.fontSizes.lg,
     },
     actBtnWrapper: { marginTop: THEME.spacing.lg2 },
     contentSection: {
@@ -66,14 +69,17 @@ export default function ContentBox({
       right: -70,
       bottom: -70,
     },
+    textColor: {
+      color: textColor,
+    },
   });
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.bgShape} />
       <View style={styles.contentSection}>
-        <Text style={styles.heading}>{title}</Text>
-        <Text style={styles.content}>{content}</Text>
+        <Text style={[styles.heading, styles.textColor]}>{title}</Text>
+        <Text style={[styles.content, styles.textColor]}>{content}</Text>
 
         <View style={styles.actBtnWrapper}>{actionBtn}</View>
       </View>
