@@ -11,26 +11,31 @@ export const CATEGORIES: Category[] = [
   {
     label: "Happy",
     color: "#ef5da8",
-    icon: ICONS.HappyIcon,
+    icon: ICONS.LaughingIcon,
   },
   {
     label: "Calm",
     color: "#aeaff7",
-    icon: ICONS.CalmIcon,
+    icon: ICONS.YinYangIcon,
   },
   {
     label: "Manic",
     color: "#9fe3e2",
-    icon: ICONS.YinYangIcon,
+    icon: ICONS.MehIcon,
   },
   {
     label: "Angry",
     color: "#f09e54",
-    icon: ICONS.AngryIcon,
+    icon: ICONS.UnamusedIcon,
   },
   {
     label: "Good",
     color: "#c2f2a5",
-    icon: ICONS.GoodIcon,
+    icon: ICONS.WinkIcon,
+  },
+  {
+    label: "Awesome",
+    color: "#43b678",
+    icon: ICONS.TongueOutIcon,
   },
 ];

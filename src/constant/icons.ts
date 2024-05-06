@@ -1,10 +1,13 @@
 import { ImageSourcePropType } from "react-native";
 
-const AngryIcon = require("@appAssets/icons/angry.png");
+const UnamusedIcon = require("@appAssets/icons/unamused.png");
 const CalmIcon = require("@appAssets/icons/relieved.png");
 const GoodIcon = require("@appAssets/icons/quality.png");
-const HappyIcon = require("@appAssets/icons/happy.png");
+const MehIcon = require("@appAssets/icons/meh.png");
 const YinYangIcon = require("@appAssets/icons/yin-and-yang.png");
+const LaughingIcon = require("@appAssets/icons/laugh.png");
+const WinkIcon = require("@appAssets/icons/wink.png");
+const TongueOutIcon = require("@appAssets/icons/tongue-out.png");
 
 const BookIcon = require("@appAssets/icons/book.png");
 const CalendarIcon = require("@appAssets/icons/calendar-day.png");
@@ -24,12 +27,14 @@ const BellIcon = require("@appAssets/icons/bell.png");
 const ArrowRight = require("@appAssets/icons/right-arrow.png");
 
 export const ICONS: { [key: string]: ImageSourcePropType } = {
-  AngryIcon,
+  UnamusedIcon,
+  TongueOutIcon,
+  WinkIcon,
   BookIcon,
   CalendarIcon,
   ClockIcon,
   CommentMiddleIcon,
-  HappyIcon,
+  MehIcon,
   HomeIcon,
   LotusIcon,
   EditIcon,
@@ -45,4 +50,5 @@ export const ICONS: { [key: string]: ImageSourcePropType } = {
   YinYangIcon,
   LinkIcon,
   ArrowRight,
+  LaughingIcon,
 };

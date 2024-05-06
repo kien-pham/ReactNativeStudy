@@ -17,7 +17,7 @@ export default function MainScreen() {
 
       <ScrollView>
         <WelcomeHeading />
-        <View style={styles.bottomSpace}>
+        <View style={[styles.bottomSpace, styles.rightSpace]}>
           <Categories data={CATEGORIES} />
         </View>
 
@@ -25,6 +25,7 @@ export default function MainScreen() {
           <ContentBox
             title="1 on 1 Sessions"
             content="Let's open up to the things that matter the most"
+            textColor={THEME.colors.purple[700]}
             bgColor={THEME.colors.primary[30]}
             bgImgColor={THEME.colors.primary[600]}
             bgImg={ICONS.LinkIcon}
@@ -74,5 +75,8 @@ const styles = StyleSheet.create({
   },
   bottomSpace: {
     marginBottom: THEME.spacing.xl,
+  },
+  rightSpace: {
+    marginRight: THEME.spacing.xl,
   },
 });
