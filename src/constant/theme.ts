@@ -12,6 +12,7 @@ export const THEME = {
       500: "#718096",
     },
     primary: {
+      10: "#f4f3f1",
       20: "#fbfbfb",
       30: "#feedde",
       50: "#f8f6f6",
@@ -30,6 +31,7 @@ export const THEME = {
       500: "#53a06e",
     },
     purple: {
+      800: "#614533",
       900: "#371b34",
     },
   },
@@ -50,11 +52,15 @@ export const THEME = {
     lg: 8,
     lg2: 12,
     xl: 16,
+    xl0: 20,
+    xl1: 24,
     xl2: 28,
     "2xl": 32,
     "3xl": 48,
   },
   sizes: {
     full: "100%",
+    md: 18,
+    lg: 24,
   },
 };

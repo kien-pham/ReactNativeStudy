@@ -4,11 +4,11 @@ import { CATEGORIES } from "src/constant/sample-data";
 import Categories from "src/features/categories/categories";
 import HeaderBar from "src/features/header-bar/header-bar";
 import WelcomeHeading from "./welcome-heading";
-import { THEME } from "src/constant/theme";
 import ContentBox from "src/components/content-box/content-box";
-import { IMAGES } from "src/constant/images";
+import { THEME } from "src/constant/theme";
 import { ICONS } from "src/constant/icons";
 import ActionLink from "src/components/action-link/action-link";
+import GroupBtns from "./group-btns";
 
 export default function MainScreen() {
   return (
@@ -35,6 +35,8 @@ export default function MainScreen() {
             bgImg={ICONS.LinkIcon}
           />
         </View>
+
+        <GroupBtns />
       </ScrollView>
     </SafeAreaView>
   );
@@ -43,7 +45,7 @@ export default function MainScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: THEME.colors.primary[50],
+    backgroundColor: THEME.colors.white,
   },
   boxWrapper: {
     padding: THEME.spacing.xl,

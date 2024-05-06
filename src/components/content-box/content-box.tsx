@@ -26,7 +26,7 @@ export default function ContentBox({
       flexDirection: "row",
       justifyContent: "space-between",
       width: "100%",
-      borderRadius: 8,
+      borderRadius: THEME.spacing.xl,
       overflow: "hidden",
     },
     mainImg: {
