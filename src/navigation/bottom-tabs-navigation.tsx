@@ -7,6 +7,7 @@ import TabIcon from "src/components/tab-icon/tab-icon";
 import VideoScreen from "src/screens/video-screen/video-screen";
 import NotificationScreen from "src/screens/user-screen/user-screen";
 import UserScreen from "src/screens/notification-screen/notification-screen";
+import { THEME } from "src/constant/theme";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +19,16 @@ export default function BottomTabsNavigation() {
         tabBarShowLabel: false,
         tabBarStyle: {
           borderTopWidth: 0,
+
+          // shadow
+          shadowColor: THEME.colors.gray[400],
+          shadowOffset: {
+            width: 0,
+            height: 5,
+          },
+          shadowOpacity: 0.34,
+          shadowRadius: 6.27,
+          elevation: 10,
         },
       }}
     >
