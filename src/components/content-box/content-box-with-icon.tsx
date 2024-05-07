@@ -7,19 +7,23 @@ export default function ContentBoxWithIcon({
   icon,
   iconSize = THEME.sizes.md,
   iconPosition = "left",
+  backgroundColor = THEME.colors.primary[10],
+  isNoPadding = false,
 }: {
   children: ReactNode;
   icon: ImageProps["source"];
   iconSize?: number;
   iconPosition?: "left" | "right";
+  backgroundColor?: string;
+  isNoPadding?: boolean;
 }) {
   const styles = StyleSheet.create({
     container: {
       flexDirection: iconPosition === "left" ? "row" : "row-reverse",
       alignItems: "center",
       justifyContent: "space-between",
-      padding: THEME.spacing.xl1,
-      backgroundColor: THEME.colors.primary[10],
+      padding: isNoPadding ? 0 : THEME.spacing.xl1,
+      backgroundColor: backgroundColor,
       borderRadius: THEME.spacing.xl,
       flex: 1,
     },

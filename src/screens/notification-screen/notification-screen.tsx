@@ -1,13 +1,11 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
-import { ICONS } from "src/constant/icons";
-import { THEME } from "src/constant/theme";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function NotificationScreen() {
   return (
     <View style={styles.container}>
-      <Image source={ICONS.CommentMiddleIcon} style={styles.image} />
-      <Text>😑</Text>
+      <Text style={styles.title}>🐶</Text>
+      <Text>meow meoww</Text>
     </View>
   );
 }
@@ -18,9 +16,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  image: {
-    width: THEME.sizes.md,
-    height: THEME.sizes.md,
-    marginBottom: THEME.spacing.lg,
+  title: {
+    fontSize: 80,
   },
 });

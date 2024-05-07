@@ -4,6 +4,7 @@ export const THEME = {
     black: "#000",
     white: "#fff",
     gray: {
+      40: "#f8f6f5",
       50: "#F7FAFC",
       100: "#EDF2F7",
       200: "#E2E8F0",
@@ -21,6 +22,7 @@ export const THEME = {
       300: "#fef3e7",
       400: "#fdeada",
       450: "#f6cfad",
+      460: "#f6ede3",
       500: "#fe8234",
       600: "#f09e54",
       800: "#8f7768",
@@ -61,7 +63,10 @@ export const THEME = {
   },
   sizes: {
     full: "100%",
+    sm: 16,
     md: 18,
     lg: 24,
+    xl: 40,
+    actionBtn: 120,
   },
 };

@@ -5,6 +5,7 @@ import { THEME } from "src/constant/theme";
 export default function ContentBox({
   title,
   content,
+  subContent,
   textColor,
   actionBtn,
   bgImg,
@@ -12,8 +13,9 @@ export default function ContentBox({
   bgColor = THEME.colors.primary[500],
   isColorBgOnly,
 }: {
-  title: string;
-  content: string;
+  title: string | ReactNode;
+  content?: string | ReactNode;
+  subContent?: ReactNode;
   textColor?: string;
   actionBtn: ReactNode;
   bgImg?: ImageProps["source"];
@@ -72,21 +74,37 @@ export default function ContentBox({
     textColor: {
       color: textColor,
     },
+    textBold: {
+      fontWeight: "bold",
+    },
   });
 
   return (
     <View style={styles.wrapper}>
       <View style={styles.bgShape} />
       <View style={styles.contentSection}>
-        <Text style={[styles.heading, styles.textColor]}>{title}</Text>
-        <Text style={[styles.content, styles.textColor]}>{content}</Text>
+        {typeof title === "string" ? (
+          <Text style={[styles.heading, styles.textColor]}>{title}</Text>
+        ) : (
+          <>{title}</>
+        )}
+
+        {typeof content === "string" ? (
+          <Text style={[styles.content, styles.textColor]}>{content}</Text>
+        ) : (
+          <>{content}</>
+        )}
+
+        {subContent && subContent}
 
         <View style={styles.actBtnWrapper}>{actionBtn}</View>
       </View>
 
-      <View style={styles.imgSection}>
-        <Image source={bgImg} style={styles.mainImg} />
-      </View>
+      {bgImg && (
+        <View style={styles.imgSection}>
+          <Image source={bgImg} style={styles.mainImg} />
+        </View>
+      )}
     </View>
   );
 }
