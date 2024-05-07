@@ -5,9 +5,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ICONS } from "src/constant/icons";
 import TabIcon from "src/components/tab-icon/tab-icon";
 import VideoScreen from "src/screens/video-screen/video-screen";
-import NotificationScreen from "src/screens/user-screen/user-screen";
-import UserScreen from "src/screens/notification-screen/notification-screen";
+import NotificationScreen from "src/screens/notification-screen/notification-screen";
+import UserScreen from "src/screens/user-screen/user-screen";
 import { THEME } from "src/constant/theme";
+import { StyleSheet } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,19 +18,7 @@ export default function BottomTabsNavigation() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarStyle: {
-          borderTopWidth: 0,
-
-          // shadow
-          shadowColor: THEME.colors.gray[400],
-          shadowOffset: {
-            width: 0,
-            height: 5,
-          },
-          shadowOpacity: 0.34,
-          shadowRadius: 6.27,
-          elevation: 10,
-        },
+        tabBarStyle: styles.tabNav,
       }}
     >
       <Tab.Screen
@@ -71,3 +60,19 @@ export default function BottomTabsNavigation() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  tabNav: {
+    borderTopWidth: 0,
+
+    // shadow
+    shadowColor: THEME.colors.gray[400],
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+    elevation: 10,
+  },
+});
