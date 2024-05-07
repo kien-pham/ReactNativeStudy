@@ -20,15 +20,16 @@ const EditIcon = require("@appAssets/icons/pencil.png");
 const PlayIcon = require("@appAssets/icons/play.png");
 const QuoteIcon = require("@appAssets/icons/quote-right.png");
 const LibraryIcon = require("@appAssets/icons/reservation-table.png");
-const LikeIcon = require("@appAssets/icons/thumbs-up.png");
+const LikeIcon = require("@appAssets/icons/like.png");
 const UserIcon = require("@appAssets/icons/user.png");
 const VideoIcon = require("@appAssets/icons/video-camera-alt.png");
 const BellIcon = require("@appAssets/icons/bell.png");
 const ArrowRight = require("@appAssets/icons/right-arrow.png");
 const ArrowDown = require("@appAssets/icons/arrow-down.png");
 const TwoArrows = require("@appAssets/icons/two-arrows.png");
+const ShareIcon = require("@appAssets/icons/share.png");
 
-export const ICONS: { [key: string]: ImageSourcePropType } = {
+export const ICONS = {
   UnamusedIcon,
   TongueOutIcon,
   WinkIcon,
@@ -55,4 +56,5 @@ export const ICONS: { [key: string]: ImageSourcePropType } = {
   ArrowDown,
   TwoArrows,
   LaughingIcon,
+  ShareIcon,
 };
