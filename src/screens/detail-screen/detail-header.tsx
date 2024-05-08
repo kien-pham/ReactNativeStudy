@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { Recipe } from "src/types/recipe";
+import { Recipe, RecipeBookmarkItem } from "src/types/recipe";
 import { BlurView } from "expo-blur";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
@@ -16,7 +16,13 @@ import { useNavigation } from "@react-navigation/native";
 import { AppScreen } from "src/constant/screen";
 import { ScreenNavProps } from "src/types/navigation";
 
-export default function DetailHeader({ recipeData }: { recipeData: Recipe }) {
+export default function DetailHeader({
+  recipeData,
+  onBookmark,
+}: {
+  recipeData: Recipe;
+  onBookmark: (bookmarkItem: RecipeBookmarkItem) => void;
+}) {
   const { navigate } = useNavigation<ScreenNavProps>();
 
   return (
@@ -42,10 +48,22 @@ export default function DetailHeader({ recipeData }: { recipeData: Recipe }) {
             </BlurView>
           </TouchableOpacity>
 
-          <Image
-            source={ICONS.BookmarkIcon}
-            style={styles.headerBookmarkIconImg}
-          />
+          <TouchableOpacity
+            onPress={() =>
+              onBookmark({
+                idMeal: recipeData.idMeal,
+                strMeal: recipeData.strMeal,
+                strCategory: recipeData.strCategory,
+                strArea: recipeData.strArea,
+                strMealThumb: recipeData.strMealThumb,
+              })
+            }
+          >
+            <Image
+              source={ICONS.BookmarkIcon}
+              style={styles.headerBookmarkIconImg}
+            />
+          </TouchableOpacity>
         </View>
 
         <BlurView intensity={40} style={styles.blurContentWrapper}>
@@ -132,12 +150,12 @@ const styles = StyleSheet.create({
     height: THEME.sizes.full as DimensionValue,
   },
   creatorTitle: {
-    color: THEME.colors.gray[800],
+    color: THEME.colors.gray[200],
     marginBottom: THEME.spacing.sm,
   },
   creatorName: {
     color: THEME.colors.gray[50],
-    fontWeight: "600",
+    fontWeight: "700",
   },
   nextIconWrapper: {
     padding: THEME.spacing.lg,

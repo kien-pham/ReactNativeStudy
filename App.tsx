@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import MainNavigation from "./src/navigation/main-navigation";
+import Toast from "react-native-toast-message";
 import { store } from "src/services/redux/redux-store";
 import { Provider } from "react-redux";
 
@@ -10,6 +11,7 @@ export default function App() {
       <View style={styles.container}>
         <MainNavigation />
       </View>
+      <Toast />
     </Provider>
   );
 }

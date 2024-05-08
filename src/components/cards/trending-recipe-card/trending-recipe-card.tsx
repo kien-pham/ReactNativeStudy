@@ -37,9 +37,9 @@ function TrendingRecipeCard({
         <Image source={{ uri: recipe.strMealThumb }} style={styles.image} />
 
         <View style={styles.contentWrapper}>
-          <BlurView intensity={60} style={styles.tagWrapper}>
+          <BlurView intensity={30} style={styles.tagWrapper}>
             <Text style={[styles.textWhite, styles.textSmall]}>
-              {recipe.strCategory}
+              {recipe.strArea}
             </Text>
           </BlurView>
 

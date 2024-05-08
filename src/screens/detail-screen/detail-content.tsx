@@ -64,7 +64,7 @@ export default function DetailContent({ recipeData }: { recipeData: Recipe }) {
           </Text>
         </View>
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.ingredientsContentWrapper}>
             <View>
               {recipeData.ingredients?.map((ingredient, index) => (

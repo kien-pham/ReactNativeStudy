@@ -34,3 +34,11 @@ export type RecipeCategory = {
 export type ResponseCategories = {
   categories: RecipeCategory[];
 };
+
+export type RecipeBookmarkItem = {
+  idMeal: string;
+  strMeal: string;
+  strCategory: string;
+  strArea: string;
+  strMealThumb: string;
+};
