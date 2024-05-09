@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { THEME } from "src/constant/theme";
 import { useGetCategoriesQuery } from "src/services/recipe-api/recipe-api";
 import { RecipeCategory } from "src/types/recipe";
+import { getRandomNumber } from "src/utils/helper";
 
 function CategoryList({ categories }: { categories: RecipeCategory[] }) {
   return (
@@ -39,10 +40,6 @@ export default function RecipeCategories() {
         <CategoryList categories={data.categories} />
       </View>
     );
-}
-
-function getRandomNumber(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 const styles = StyleSheet.create({

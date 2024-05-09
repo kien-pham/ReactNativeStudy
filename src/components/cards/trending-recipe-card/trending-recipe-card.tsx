@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
+import { useBookmark } from "src/hooks/use-bookmark";
 import { Recipe } from "src/types/recipe";
 
 export function TrendingRecipeCardSkeleton() {
@@ -31,6 +32,8 @@ function TrendingRecipeCard({
   recipe: Recipe;
   onPress?: (recipeId: string) => void;
 }) {
+  const { saveBookmark } = useBookmark();
+
   return (
     <TouchableOpacity onPress={() => onPress?.(recipe.idMeal)}>
       <View style={styles.container}>
@@ -46,7 +49,23 @@ function TrendingRecipeCard({
           <BlurView intensity={50} style={styles.infoWrapper}>
             <View style={styles.infoTitleBox}>
               <Text style={styles.textTitle}>{recipe.strMeal}</Text>
-              <Image source={ICONS.BookmarkIcon} style={styles.bookmarkIcon} />
+
+              <TouchableOpacity
+                onPress={() =>
+                  saveBookmark({
+                    idMeal: recipe.idMeal,
+                    strMeal: recipe.strMeal,
+                    strCategory: recipe.strCategory,
+                    strArea: recipe.strArea,
+                    strMealThumb: recipe.strMealThumb,
+                  })
+                }
+              >
+                <Image
+                  source={ICONS.BookmarkIcon}
+                  style={styles.bookmarkIcon}
+                />
+              </TouchableOpacity>
             </View>
             <Text style={[styles.subTitle]}>{recipe.strCategory}</Text>
           </BlurView>

@@ -23,7 +23,6 @@ export default function DetailScreen() {
         if (status === SaveBookMarkStatus.Success) {
           Toast.show({
             type: "success",
-            position: "bottom",
             text1: "Bookmark saved!",
             text2: "This recipe has been saved to your bookmark",
           });
@@ -32,7 +31,6 @@ export default function DetailScreen() {
         if (status === SaveBookMarkStatus.Removed) {
           Toast.show({
             type: "error",
-            position: "bottom",
             text1: "Bookmark removed!",
             text2: "This recipe has been removed from your bookmark",
           });
@@ -41,7 +39,6 @@ export default function DetailScreen() {
         if (status === SaveBookMarkStatus.Duplicate) {
           Toast.show({
             type: "error",
-            position: "bottom",
             text1: "Duplicated!",
             text2: "Your bookmark already exist",
           });
