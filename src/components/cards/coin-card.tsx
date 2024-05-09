@@ -1,7 +1,13 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
-import { ICONS } from "src/constant/icons";
+import {
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { THEME } from "src/constant/theme";
+import PercentChange from "../percent-change/percent-change";
 
 export default function CoinCard({
   icon,
@@ -10,10 +16,10 @@ export default function CoinCard({
   changePercent,
   isPriceUp = true,
 }: {
-  icon: any;
+  icon: ImageSourcePropType;
   name: string;
   price: string;
-  changePercent: string;
+  changePercent: number;
   isPriceUp?: boolean;
 }) {
   return (
@@ -24,20 +30,7 @@ export default function CoinCard({
       </View>
       <View style={styles.coinPriceWrapper}>
         <Text style={styles.text}>{price}</Text>
-        <View style={styles.coinWrapper}>
-          <Image
-            source={ICONS.ArrowUpIcon}
-            style={[
-              styles.iconArrow,
-              isPriceUp ? styles.upIcon : styles.downIcon,
-            ]}
-          />
-          <Text
-            style={[styles.coinChange, isPriceUp ? styles.up : styles.down]}
-          >
-            {changePercent}
-          </Text>
-        </View>
+        <PercentChange isUp={isPriceUp} changeValue={changePercent} />
       </View>
     </View>
   );
@@ -56,11 +49,6 @@ const styles = StyleSheet.create({
     height: THEME.sizes.sm,
     marginRight: THEME.spacing.xl1,
   },
-  iconArrow: {
-    width: THEME.sizes.xs,
-    height: THEME.sizes.xs,
-    marginRight: THEME.spacing.md,
-  },
   coinWrapper: {
     flexDirection: "row",
     alignItems: "center",
@@ -72,22 +60,5 @@ const styles = StyleSheet.create({
   text: {
     color: THEME.colors.white,
     fontWeight: "700",
-  },
-  coinChange: {
-    fontWeight: "600",
-    fontSize: THEME.fontSizes.sm,
-  },
-  up: {
-    color: THEME.colors.primary[500],
-  },
-  down: {
-    color: "red",
-  },
-  upIcon: {
-    tintColor: THEME.colors.primary[500],
-  },
-  downIcon: {
-    tintColor: "red",
-    transform: [{ rotate: "90deg" }],
   },
 });

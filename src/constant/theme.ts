@@ -34,7 +34,7 @@ export const THEME = {
   },
   sizes: {
     full: "100%",
-    xs: 10,
+    xs: 8,
     sm: 16,
     md: 18,
     lg: 24,

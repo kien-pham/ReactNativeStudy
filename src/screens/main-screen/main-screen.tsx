@@ -19,7 +19,7 @@ export default function MainScreen() {
         icon={ICONS.HomeIcon}
         name="Bitcoin"
         price="$ 50.000"
-        changePercent="30%"
+        changePercent={30}
       />
     </View>
   );
