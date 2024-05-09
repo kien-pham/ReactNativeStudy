@@ -6,10 +6,14 @@ const MarketIcon = require("@appAssets/icons/stats.png");
 const TradeIcon = require("@appAssets/icons/trade.png");
 const UserIcon = require("@appAssets/icons/user.png");
 
+const ArrowUpIcon = require("@appAssets/icons/arrow-up.png");
+
 export const ICONS: { [key: string]: ImageSourcePropType } = {
   HomeIcon,
   PortfolioIcon,
   MarketIcon,
   TradeIcon,
   UserIcon,
+
+  ArrowUpIcon,
 };
