@@ -6,7 +6,9 @@ export type RootStackParamList = {
   SplashScreen: undefined;
   MainTabs: undefined;
   MainScreen: undefined;
-  SearchScreen: undefined;
+  SearchScreen: {
+    searchQuery: string;
+  };
   BookmarksScreen: undefined;
   SettingsScreen: undefined;
   DetailScreen: { recipeId: string };
@@ -26,4 +28,9 @@ export type ScreenNavRouteProp = RouteProp<
 export type DetailScreenRouteProp = RouteProp<
   RootStackParamList,
   AppScreen.DetailScreen
+>;
+
+export type SearchScreenRouteProp = RouteProp<
+  RootStackParamList,
+  AppScreen.SearchScreen
 >;

@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     color: THEME.colors.gray[500],
   },
   subTitle: {
-    color: THEME.colors.gray["400"],
+    color: THEME.colors.gray["500"],
     fontSize: THEME.fontSizes.sm,
   },
 });
