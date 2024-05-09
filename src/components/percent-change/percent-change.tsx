@@ -4,10 +4,10 @@ import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
 
 export default function PercentChange({
-  isUp,
+  isUp = true,
   changeValue,
 }: {
-  isUp: boolean;
+  isUp?: boolean;
   changeValue: number;
 }) {
   return (
