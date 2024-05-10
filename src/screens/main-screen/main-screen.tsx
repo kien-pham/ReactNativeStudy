@@ -22,13 +22,17 @@ export default function MainScreen() {
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
           <View style={styles.walletWrapper}>
-            <Wallet price={62290} changeValue={3.2} />
+            <Wallet
+              price={coinData[0].currentPrice}
+              changeValue={coinData[0].priceChangePercentage24h}
+              isUp={coinData[0].isUp}
+            />
           </View>
 
           <View style={styles.btnWrapper}>
             <View style={styles.btnsGroup}>
-              <IconButton label="Transfer" icon={ICONS.HomeIcon} />
-              <IconButton label="Withdraw" icon={ICONS.HomeIcon} />
+              <IconButton label="Transfer" icon={ICONS.SendIcon} />
+              <IconButton label="Withdraw" icon={ICONS.DownArrowIcon} />
             </View>
           </View>
         </View>
@@ -92,6 +96,6 @@ const styles = StyleSheet.create({
     color: THEME.colors.white,
     fontWeight: "bold",
     fontSize: THEME.fontSizes.md,
-    marginBottom: THEME.spacing.lg,
+    marginBottom: THEME.spacing.xl,
   },
 });

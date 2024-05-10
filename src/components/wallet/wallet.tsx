@@ -6,9 +6,11 @@ import { THEME } from "src/constant/theme";
 export default function Wallet({
   price,
   changeValue,
+  isUp,
 }: {
   price: number;
   changeValue: number;
+  isUp: boolean;
 }) {
   return (
     <View style={styles.container}>
@@ -21,7 +23,7 @@ export default function Wallet({
         <Text style={[styles.textGray, styles.bold]}>USD</Text>
       </View>
       <View style={styles.infoWrapper}>
-        <PercentChange changeValue={changeValue} />
+        <PercentChange changeValue={changeValue} isUp={isUp} />
         <Text style={[styles.textGray, styles.spaceH]}>7d change</Text>
       </View>
     </View>

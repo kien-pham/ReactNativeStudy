@@ -7,6 +7,8 @@ const TradeIcon = require("@appAssets/icons/trade.png");
 const UserIcon = require("@appAssets/icons/user.png");
 
 const ArrowUpIcon = require("@appAssets/icons/arrow-up.png");
+const DownArrowIcon = require("@appAssets/icons/down.png");
+const SendIcon = require("@appAssets/icons/send.png");
 
 export const ICONS: { [key: string]: ImageSourcePropType } = {
   HomeIcon,
@@ -16,4 +18,6 @@ export const ICONS: { [key: string]: ImageSourcePropType } = {
   UserIcon,
 
   ArrowUpIcon,
+  DownArrowIcon,
+  SendIcon,
 };
