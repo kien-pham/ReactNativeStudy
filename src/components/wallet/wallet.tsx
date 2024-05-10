@@ -3,7 +3,13 @@ import { StyleSheet, Text, View } from "react-native";
 import PercentChange from "../percent-change/percent-change";
 import { THEME } from "src/constant/theme";
 
-export default function Wallet({ price }: { price: number }) {
+export default function Wallet({
+  price,
+  changeValue,
+}: {
+  price: number;
+  changeValue: number;
+}) {
   return (
     <View style={styles.container}>
       <Text style={[styles.heading, styles.textGray]}>Your Wallet</Text>
@@ -15,7 +21,7 @@ export default function Wallet({ price }: { price: number }) {
         <Text style={[styles.textGray, styles.bold]}>USD</Text>
       </View>
       <View style={styles.infoWrapper}>
-        <PercentChange changeValue={2.3} />
+        <PercentChange changeValue={changeValue} />
         <Text style={[styles.textGray, styles.spaceH]}>7d change</Text>
       </View>
     </View>
@@ -27,7 +33,7 @@ const styles = StyleSheet.create({
     width: "auto",
   },
   textGray: {
-    color: THEME.colors.gray[300],
+    color: THEME.colors.gray[200],
   },
   textWhite: {
     color: THEME.colors.white,
@@ -54,6 +60,5 @@ const styles = StyleSheet.create({
   },
   infoWrapper: {
     flexDirection: "row",
-    justifyContent: "space-between",
   },
 });

@@ -26,7 +26,7 @@ export default function IconButton({
 const styles = StyleSheet.create({
   wrapper: {
     paddingVertical: THEME.spacing.xl,
-    paddingHorizontal: THEME.spacing.xl1,
+    paddingHorizontal: THEME.spacing.xl2,
     backgroundColor: THEME.colors.white,
     borderRadius: THEME.spacing.lg,
     flexDirection: "row",
