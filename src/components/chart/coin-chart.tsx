@@ -2,24 +2,20 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { LineChart } from "react-native-wagmi-charts";
 import { THEME } from "src/constant/theme";
-
-export type ChartDataType = {
-  timestamp: number;
-  value: number;
-};
+import { ChartValue } from "src/types/coin";
 
 export default function CoinChart({
   height = 300,
   data,
 }: {
   height?: number;
-  data: ChartDataType[];
+  data: ChartValue[];
 }) {
   return (
     <View style={{}}>
       <LineChart.Provider data={data}>
         <LineChart height={height}>
-          <LineChart.Path color={THEME.colors.primary[500]} width={2}>
+          <LineChart.Path color={THEME.colors.primary[500]} width={1}>
             <LineChart.Gradient />
           </LineChart.Path>
           <LineChart.CursorCrosshair color={THEME.colors.primary[500]}>

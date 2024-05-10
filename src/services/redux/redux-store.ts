@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { coinMarketApi } from "../api/coingecko-api";
 
 export const store = configureStore({
-  reducer: {},
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  reducer: {
+    [coinMarketApi.reducerPath]: coinMarketApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(coinMarketApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

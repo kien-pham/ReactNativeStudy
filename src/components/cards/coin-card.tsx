@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Image,
-  ImageSourcePropType,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { THEME } from "src/constant/theme";
 import PercentChange from "../percent-change/percent-change";
 
@@ -16,16 +10,16 @@ export default function CoinCard({
   changePercent,
   isPriceUp = true,
 }: {
-  icon: ImageSourcePropType;
+  icon: string;
   name: string;
-  price: string;
+  price: number;
   changePercent: number;
   isPriceUp?: boolean;
 }) {
   return (
     <View style={styles.wrapper}>
       <View style={styles.coinWrapper}>
-        <Image source={icon} style={styles.icon} />
+        <Image source={{ uri: icon }} style={styles.icon} />
         <Text style={styles.text}>{name}</Text>
       </View>
       <View style={styles.coinPriceWrapper}>
@@ -44,9 +38,8 @@ const styles = StyleSheet.create({
     paddingVertical: THEME.spacing.md,
   },
   icon: {
-    tintColor: THEME.colors.white,
-    width: THEME.sizes.sm,
-    height: THEME.sizes.sm,
+    width: THEME.sizes.md,
+    height: THEME.sizes.md,
     marginRight: THEME.spacing.xl1,
   },
   coinWrapper: {

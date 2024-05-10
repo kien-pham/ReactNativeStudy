@@ -1,62 +1,59 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import CoinCard from "src/components/cards/coin-card";
 import CoinChart from "src/components/chart/coin-chart";
 import IconButton from "src/components/icon-button/icon-button";
 import Wallet from "src/components/wallet/wallet";
 import { ICONS } from "src/constant/icons";
 import { THEME } from "src/constant/theme";
-
-const data = [
-  {
-    timestamp: 1625945400000,
-    value: 33575.25,
-  },
-  {
-    timestamp: 1625946300000,
-    value: 33545.25,
-  },
-  {
-    timestamp: 1625947200000,
-    value: 33510.25,
-  },
-  {
-    timestamp: 1625948100000,
-    value: 33215.25,
-  },
-];
+import { useFormatCoinDataFromApi } from "src/hooks/use-format-coin-data";
+import { useGetCoinsPriceQuery } from "src/services/api/coingecko-api";
+import { ResponseCoin } from "src/types/coin";
 
 export default function MainScreen() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.headerWrapper}>
-        <View style={styles.walletWrapper}>
-          <Wallet price={62290} changeValue={3.2} />
-        </View>
+  const { data } = useGetCoinsPriceQuery();
+  const coinData = useFormatCoinDataFromApi(data as ResponseCoin[]);
+  const btcChartData =
+    (coinData && coinData.find((coin) => coin.symbol === "btc")?.chartValue) ||
+    [];
 
-        <View style={styles.btnWrapper}>
-          <View style={styles.btnsGroup}>
-            <IconButton label="Transfer" icon={ICONS.HomeIcon} />
-            <IconButton label="Withdraw" icon={ICONS.HomeIcon} />
+  if (coinData)
+    return (
+      <View style={styles.container}>
+        <View style={styles.headerWrapper}>
+          <View style={styles.walletWrapper}>
+            <Wallet price={62290} changeValue={3.2} />
+          </View>
+
+          <View style={styles.btnWrapper}>
+            <View style={styles.btnsGroup}>
+              <IconButton label="Transfer" icon={ICONS.HomeIcon} />
+              <IconButton label="Withdraw" icon={ICONS.HomeIcon} />
+            </View>
           </View>
         </View>
-      </View>
 
-      <View style={styles.chartWrapper}>
-        <CoinChart data={data} height={200} />
-      </View>
+        <View style={styles.chartWrapper}>
+          <CoinChart data={btcChartData} height={200} />
+        </View>
 
-      <View>
-        <Text style={styles.heading}>Top Cryptocurrency</Text>
-        <CoinCard
-          icon={ICONS.HomeIcon}
-          name="Bitcoin"
-          price="$ 50.000"
-          changePercent={30}
-        />
+        <View style={styles.coinListWrapper}>
+          <Text style={styles.heading}>Top Cryptocurrency</Text>
+          <FlatList
+            data={coinData.sort((a, b) => a.marketRank - b.marketRank)}
+            renderItem={({ item }) => (
+              <CoinCard
+                icon={item.image}
+                name={item.name}
+                price={item.currentPrice}
+                changePercent={item.priceChangePercentage24h}
+                isPriceUp={item.isUp}
+              />
+            )}
+          />
+        </View>
       </View>
-    </View>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
@@ -86,11 +83,15 @@ const styles = StyleSheet.create({
     width: "66%",
   },
   chartWrapper: {
-    marginVertical: THEME.spacing.xxl,
+    marginTop: THEME.spacing.xxl,
+  },
+  coinListWrapper: {
+    paddingHorizontal: THEME.spacing.xl2,
   },
   heading: {
     color: THEME.colors.white,
     fontWeight: "bold",
     fontSize: THEME.fontSizes.md,
+    marginBottom: THEME.spacing.lg,
   },
 });
